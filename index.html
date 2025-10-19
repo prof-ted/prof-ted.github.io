@@ -32,6 +32,27 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var warningBanner = document.querySelector("#unity-warning");
 
+
+      function resizeGame() {
+        var gameContainer = document.getElementById("unity-container");
+        var widthToHeight = 768 / 1024;
+        var newWidth = window.innerWidth;
+        var newHeight = window.innerHeight;
+        var newWidthToHeight = newWidth / newHeight;
+
+        if (newWidthToHeight > widthToHeight) {
+            newWidth = newHeight * widthToHeight;
+          } else {
+            newHeight = newWidth / widthToHeight;
+        }
+
+        gameContainer.style.width = newWidth + 'px';
+        gameContainer.style.height = newHeight + 'px';
+      }
+
+      window.addEventListener('resize', resizeGame, false);
+      resizeGame();      
+
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
