@@ -1,4 +1,4 @@
-const cacheName = "Ted Bisson-1942, A Clone-0.1.0";
+const cacheName = "Ted Bisson-Pacific Defense-0.1.0";
 const contentToCache = [
     "Build/WebBuild.loader.js",
     "Build/WebBuild.framework.js",

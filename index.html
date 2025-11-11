@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | 1942, A Clone</title>
+    <title>Unity Web Player | Pacific Defense</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
@@ -32,26 +32,6 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var warningBanner = document.querySelector("#unity-warning");
 
-      function resizeGame() {
-        var gameContainer = document.getElementById("unity-container");
-        var widthToHeight = 768 / 1024;
-        var newWidth = window.innerWidth;
-        var newHeight = window.innerHeight;
-        var newWidthToHeight = newWidth / newHeight;
-
-        if (newWidthToHeight > widthToHeight) {
-            newWidth = newHeight * widthToHeight;
-          } else {
-            newHeight = newWidth / widthToHeight;
-        }
-
-        gameContainer.style.width = newWidth + 'px';
-        gameContainer.style.height = newHeight + 'px';
-      }
-
-      window.addEventListener('resize', resizeGame, false);
-      resizeGame();      
-
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -77,15 +57,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
+      var loaderUrl = buildUrl + "/WebBuild.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Build.data",
-        frameworkUrl: buildUrl + "/Build.framework.js",
-        codeUrl: buildUrl + "/Build.wasm",
+        dataUrl: buildUrl + "/WebBuild.data",
+        frameworkUrl: buildUrl + "/WebBuild.framework.js",
+        codeUrl: buildUrl + "/WebBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Ted Bisson",
-        productName: "1942, A Clone",
+        productName: "Pacific Defense",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
         // errorHandler: function(err, url, line) {
